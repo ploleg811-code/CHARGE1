@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0709" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>CHARGE — премиальный детейлинг-центр в Санкт-Петербурге</title>
+    <meta
+      name="description"
+      content="CHARGE — детейлинг-студия премиум-класса в Санкт-Петербурге: защитная PPF-плёнка, керамическое покрытие, полировка, оклейка и детейлинг салона. Запишитесь на консультацию."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://charge-detailing.ru/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="CHARGE" />
+    <meta property="og:title" content="CHARGE — премиальный детейлинг-центр в Санкт-Петербурге" />
+    <meta
+      property="og:description"
+      content="Защитная PPF-плёнка, керамика, полировка и стайлинг. Совершенство — в деталях."
+    />
+    <meta property="og:url" content="https://charge-detailing.ru/" />
+    <meta property="og:image" content="/images/studio/hero.jpg" />
+
+    <link rel="preconnect" href="./" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <script src="./assets/app.js" defer></script>
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Проект собран на Vite: это SPA с module-скриптами и абсолютными путями
+      // (/assets/…, /images/…). При открытии index.html напрямую (протокол file://)
+      // браузер блокирует загрузку модулей — показываем понятную инструкцию.
+      // Если приложение всё же запустилось (standalone-сборка) — подсказка не нужна.
+      if (location.protocol === 'file:') {
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            var root = document.getElementById('root');
+            if (root && root.childElementCount > 0) return;
+            var box = document.createElement('div');
+            box.setAttribute(
+              'style',
+              [
+                'position:fixed',
+                'inset:0',
+                'z-index:99999',
+                'background:linear-gradient(160deg,#0b0709,#2a0d14)',
+                'color:#f6f2ec',
+                'font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif',
+                'display:flex',
+                'align-items:center',
+                'justify-content:center',
+                'padding:28px',
+                'text-align:left',
+                'line-height:1.6',
+              ].join(';'),
+            );
+            box.innerHTML =
+              '<div style="max-width:640px">' +
+              '<div style="font-family:Unbounded,system-ui,sans-serif;font-weight:800;letter-spacing:.22em;font-size:1.5rem;margin-bottom:18px">CHARGE</div>' +
+              '<h1 style="font-family:Unbounded,system-ui,sans-serif;font-size:1.5rem;line-height:1.2;margin:0 0 14px">Сайт нужно открыть через локальный сервер</h1>' +
+              '<p style="margin:0 0 22px;color:#b3a7af">Это SPA-приложение на Vite. Файл <code style="color:#ff9aa1">index.html</code> нельзя открывать двойным кликом: браузер запрещает загрузку module-скриптов при протоколе <code style="color:#ff9aa1">file://</code>. Запустите команды в папке проекта:</p>' +
+              '<pre style="background:#150c11;border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 18px;margin:0 0 20px;overflow:auto;font-size:.92rem;color:#e9e6ea">npm install\nnpm run dev</pre>' +
+              '<p style="margin:0;color:#b3a7af">Затем откройте <a style="color:#ff9aa1" href="http://localhost:5173/">http://localhost:5173/</a>. Для продакшен-сборки: <code style="color:#ff9aa1">npm run build &amp;&amp; npm run preview</code> → <a style="color:#ff9aa1" href="http://localhost:4173/">http://localhost:4173/</a></p>' +
+              '</div>';
+            document.body.appendChild(box);
+          }, 1200);
+        });
+      }
+    </script>
+  </body>
+</html>
