@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>CHARGE — проверка горизонтального переполнения</title>
+<style>
+  body { margin: 0; font: 13px/1.5 monospace; }
+  #frames { position: fixed; left: -9999px; top: 0; }
+  iframe { border: 0; }
+  #out { padding: 16px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div id="frames">
+  <iframe id="f" width="390" height="900"></iframe>
+  <iframe id="f2" width="768" height="900"></iframe>
+  <iframe id="f3" width="1440" height="900"></iframe>
+</div>
+<pre id="out">running…</pre>
+<script>
+var ROUTES = ['/', '/services', '/services/ppf', '/services/ceramic', '/services/polishing',
+  '/services/wrapping', '/cars', '/cars/bmw', '/cars/tesla', '/works', '/about',
+  '/contacts', '/cart', '/configure', '/unknown-page'];
+
+var WIDTHS = [{ id: 'f', w: 390 }, { id: 'f2', w: 768 }, { id: 'f3', w: 1440 }];
+var results = [];
+
+function check(frameId, width, route, done) {
+  var f = document.getElementById(frameId);
+  var go = function () {
+    setTimeout(function () {
+      try {
+        var d = f.contentDocument.documentElement;
+        var b = f.contentDocument.body;
+        var over = Math.max(d.scrollWidth, b.scrollWidth) - d.clientWidth;
+        var culprits = [];
+        if (over > 1) {
+          var all = f.contentDocument.querySelectorAll('body *');
+          for (var i = 0; i < all.length; i++) {
+            var el = all[i];
+            var r = el.getBoundingClientRect();
+            if (r.width === 0 && r.height === 0) continue;
+            if (r.right > d.clientWidth + 1) {
+              culprits.push({
+                tag: el.tagName,
+                cls: (el.className && el.className.baseVal !== undefined ? el.className.baseVal : String(el.className || '')).slice(0, 60),
+                right: Math.round(r.right),
+                w: Math.round(r.width),
+                left: Math.round(r.left)
+              });
+            }
+          }
+        }
+        results.push({ w: width, route: route, scrollW: d.scrollWidth, clientW: d.clientWidth, over: over, culprits: culprits.slice(0, 6) });
+      } catch (e) {
+        results.push({ w: width, route: route, error: String(e) });
+      }
+      done();
+    }, 900);
+  };
+  f.onload = go;
+  f.src = route;
+  setTimeout(function () { if (f.contentWindow && f.contentDocument && f.contentDocument.readyState === 'complete') go(); }, 3000);
+}
+
+var wi = 0, ri = 0;
+function next() {
+  if (wi >= WIDTHS.length) {
+    var bad = results.filter(function (r) { return r.over > 1 || r.error; });
+    document.getElementById('out').textContent =
+      'RESULT ' + JSON.stringify({ total: results.length, badCount: bad.length, bad: bad });
+    return;
+  }
+  if (ri >= ROUTES.length) { wi++; ri = 0; next(); return; }
+  var w = WIDTHS[wi], r = ROUTES[ri];
+  ri++;
+  check(w.id, w.w, r, function () { setTimeout(next, 60); });
+}
+next();
+</script>
+</body>
+</html>
