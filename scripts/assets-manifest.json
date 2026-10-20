@@ -1,0 +1,326 @@
+﻿[
+    {
+        "file":  "public/images/brands/porsche/porsche-cayenne.jpg",
+        "title":  "File:2023 Porsche Cayenne Coupé S 1X7A1674.jpg",
+        "query":  "Porsche Cayenne",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/porsche/porsche-taycan.jpg",
+        "title":  "File:2024 Porsche Taycan Cross Turismo DSC 7028.jpg",
+        "query":  "Porsche Taycan",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/porsche/porsche-panamera.jpg",
+        "title":  "File:2010 Porsche Panamera V6.jpg",
+        "query":  "Porsche Panamera",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/audi.jpg",
+        "title":  "File:2024 Audi A6 Avant C8 IMG 0135.jpg",
+        "query":  "Audi A6 C8",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/audi/audi-a6.jpg",
+        "query":  "Audi A6 C8 sedan",
+        "status":  "missing"
+    },
+    {
+        "file":  "public/images/brands/audi/audi-q7.jpg",
+        "title":  "File:2015 Audi Q7 (4M) 3.0 TDI wagon (2016-08-27).jpg",
+        "query":  "Audi Q7 4M SUV",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/audi/audi-rs6.jpg",
+        "title":  "File:2022 Audi RS6 Avant Vorsprung BS O24.jpg",
+        "query":  "Audi RS6 Avant C8",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/audi/audi-etron.jpg",
+        "query":  "Audi e-tron GT",
+        "status":  "missing"
+    },
+    {
+        "file":  "public/images/brands/lamborghini.jpg",
+        "title":  "File:Lamborghini Huracan, BAS 24, Brussels (P1170508-RR).jpg",
+        "query":  "Lamborghini Huracan",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lamborghini/lambo-huracan.jpg",
+        "title":  "File:Lamborghini Huracan, BAS 24, Brussels (P1170508-RR).jpg",
+        "query":  "Lamborghini Huracan",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lamborghini/lambo-aventador.jpg",
+        "title":  "File:Geneva International Motor Show 2018, Le Grand-Saconnex (1X7A1486).jpg",
+        "query":  "Lamborghini Aventador",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lamborghini/lambo-urus.jpg",
+        "title":  "File:Lamborghini Urus, BAS 24, Brussels (P1170506).jpg",
+        "query":  "Lamborghini Urus",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/ferrari.jpg",
+        "title":  "File:2021 Ferrari Roma 6.jpg",
+        "query":  "Ferrari Roma",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/ferrari/ferrari-roma.jpg",
+        "title":  "File:2021 Ferrari Roma 6.jpg",
+        "query":  "Ferrari Roma",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/ferrari/ferrari-f8.jpg",
+        "title":  "File:2020 Ferrari F8 Tributo 3.9.jpg",
+        "query":  "Ferrari F8 Tributo",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/ferrari/ferrari-sf90.jpg",
+        "title":  "File:2021 Ferrari SF90.jpg",
+        "query":  "Ferrari SF90 Stradale",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/ferrari/ferrari-296.jpg",
+        "title":  "File:2022 Ferrari 296 GTB (69705).jpg",
+        "query":  "Ferrari 296 GTB",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/bentley.jpg",
+        "title":  "File:2016 Bentley Continental GT Speed 0703.jpg",
+        "query":  "Bentley Continental GT",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/bentley/bentley-continental.jpg",
+        "title":  "File:2016 Bentley Continental GT Speed 0703.jpg",
+        "query":  "Bentley Continental GT",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/bentley/bentley-bentayga.jpg",
+        "title":  "File:2020 Bentley Bentayga V8 Auto 2.jpg",
+        "query":  "Bentley Bentayga",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/bentley/bentley-spur.jpg",
+        "query":  "Bentley Flying Spur",
+        "status":  "missing"
+    },
+    {
+        "file":  "public/images/brands/rolls-royce.jpg",
+        "title":  "File:2012 Rolls Royce Ghost at Chelsea Auto Legends 2012 (Ank Kumar).jpg",
+        "query":  "Rolls-Royce Ghost",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/rolls-royce/rr-ghost.jpg",
+        "title":  "File:2012 Rolls Royce Ghost at Chelsea Auto Legends 2012 (Ank Kumar).jpg",
+        "query":  "Rolls-Royce Ghost",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/rolls-royce/rr-phantom.jpg",
+        "title":  "File:1936 Rolls-Royce Phantom III Landaulet, Classic-Gala 2025, Schwetzingen (20250906-P1049456).jpg",
+        "query":  "Rolls-Royce Phantom",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/rolls-royce/rr-cullinan.jpg",
+        "title":  "File:2020 Rolls-Royce Cullinan cropped.jpg",
+        "query":  "Rolls-Royce Cullinan",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lexus.jpg",
+        "title":  "File:2021 Lexus RX 300 Krakow.jpg",
+        "query":  "Lexus RX",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lexus/lexus-rx.jpg",
+        "title":  "File:2021 Lexus RX 300 Krakow.jpg",
+        "query":  "Lexus RX",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lexus/lexus-lx.jpg",
+        "title":  "File:1980-1987 Toyota Land Cruiser STD FJ62V.jpg",
+        "query":  "Lexus LX",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/lexus/lexus-es.jpg",
+        "title":  "File:2022 Lexus ES 350 (GSZ10) 1X7A0296.jpg",
+        "query":  "Lexus ES",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/toyota.jpg",
+        "query":  "Toyota Camry",
+        "status":  "missing"
+    },
+    {
+        "file":  "public/images/brands/toyota/toyota-camry.jpg",
+        "title":  "File:(USA-Massachusetts) Private Toyota Camry NJ-Z22UKZ rear 2024-06-06.jpg",
+        "query":  "Toyota Camry",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/toyota/toyota-landcruiser.jpg",
+        "title":  "File:2021 Toyota Land Cruieser 300 ZX.jpg",
+        "query":  "Toyota Land Cruiser 300",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/toyota/toyota-supra.jpg",
+        "title":  "File:CCA 1 31 Toyota Supra A90 (2024-11-30).jpg",
+        "query":  "Toyota Supra A90",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/toyota/toyota-rav4.jpg",
+        "title":  "File:(USA-New York) NYC Medallion Cab Toyota RAV4 NY-Taxi-Y202490C 2024-06-15.jpg",
+        "query":  "Toyota RAV4",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/volkswagen.jpg",
+        "title":  "File:2008-07-23 VW Golf crossing railroad in Durham.jpg",
+        "query":  "Volkswagen Golf GTI",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/volkswagen/vw-golf.jpg",
+        "title":  "File:2008-07-23 VW Golf crossing railroad in Durham.jpg",
+        "query":  "Volkswagen Golf GTI",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/volkswagen/vw-passat.jpg",
+        "title":  "File:DSC06183 Unmarked Volkswagen Passat B8, Bundespolizei Österreich, Front, 2023-10.jpg",
+        "query":  "Volkswagen Passat B8",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/volkswagen/vw-tiguan.jpg",
+        "title":  "File:VW Tiguan TDI 2.0, Bj. 2008-06 (Sp).jpg",
+        "query":  "Volkswagen Tiguan",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/volkswagen/vw-touareg.jpg",
+        "title":  "File:2024 Volkswagen Touareg R Auto Zuerich 2023 1X7A1339.jpg",
+        "query":  "Volkswagen Touareg",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/tesla.jpg",
+        "title":  "File:20180630 Tesla Model S 70D 2015 midnight blue left front.jpg",
+        "query":  "Tesla Model S",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/tesla/tesla-s.jpg",
+        "title":  "File:20180630 Tesla Model S 70D 2015 midnight blue left front.jpg",
+        "query":  "Tesla Model S",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/tesla/tesla-3.jpg",
+        "title":  "File:2019 Tesla Model 3 Performance AWD.jpg",
+        "query":  "Tesla Model 3",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/tesla/tesla-x.jpg",
+        "query":  "Tesla Model X",
+        "status":  "error"
+    },
+    {
+        "file":  "public/images/brands/tesla/tesla-y.jpg",
+        "title":  "File:Tesla Model Y (2025) DSC 8297.jpg",
+        "query":  "Tesla Model Y",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/range-rover.jpg",
+        "title":  "File:2015 Land Rover Range Rover Sport HSE 3.0 Front.jpg",
+        "query":  "Range Rover Sport",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/range-rover/rr-sport.jpg",
+        "title":  "File:2015 Land Rover Range Rover Sport HSE 3.0 Front.jpg",
+        "query":  "Range Rover Sport",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/range-rover/rr-evoque.jpg",
+        "title":  "File:2012 Range Rover Evoque Milner LRM-1.jpg",
+        "query":  "Range Rover Evoque",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/range-rover/rr-velar.jpg",
+        "title":  "File:2017 Land Rover Range Rover Velar First Edition D3 3.0 Front.jpg",
+        "query":  "Range Rover Velar",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/range-rover/rr-vogue.jpg",
+        "title":  "File:Arden Range Rover, GIMS 2019, Le Grand-Saconnex (1X7A1174).jpg",
+        "query":  "Range Rover L405",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/mclaren.jpg",
+        "title":  "File:2018 McLaren 720S 10.jpg",
+        "query":  "McLaren 720S",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/mclaren/mclaren-720s.jpg",
+        "title":  "File:2018 McLaren 720S 10.jpg",
+        "query":  "McLaren 720S",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/mclaren/mclaren-gt.jpg",
+        "title":  "File:2019 McLaren GT (25612).jpg",
+        "query":  "McLaren GT",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/brands/mclaren/mclaren-artura.jpg",
+        "title":  "File:2022 McLaren Artura (28196).jpg",
+        "query":  "McLaren Artura",
+        "status":  "ok"
+    },
+    {
+        "file":  "public/images/studio/detailing.jpg",
+        "query":  "AZ Auto Detailing",
+        "status":  "error"
+    },
+    {
+        "file":  "public/images/studio/hero.jpg",
+        "title":  "File:\"14 - ITALIAN Sports car - Fiat 500 c Abarth at the 2014 New York International Auto Show black coupé.jpg",
+        "query":  "black sports car",
+        "status":  "ok"
+    }
+]
