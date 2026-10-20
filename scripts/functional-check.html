@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>CHARGE — функциональная проверка корзины и формы</title>
+<style>body{margin:0;font:13px/1.5 monospace}#frames{position:fixed;left:-9999px;top:0}iframe{border:0}#out{padding:16px;white-space:pre-wrap}</style>
+</head>
+<body>
+<div id="frames"><iframe id="f" width="1280" height="900"></iframe></div>
+<pre id="out">running…</pre>
+<script>
+var log = [];
+var errors = [];
+window.onerror = function (m, s, l) { errors.push(String(m) + ' @' + l); };
+var f = document.getElementById('f');
+function note(step, data) { log.push(Object.assign({ step: step }, data || {})); }
+function doc() { return f.contentDocument; }
+function win() { return f.contentWindow; }
+function byText(sel, text) {
+  var els = Array.prototype.slice.call(doc().querySelectorAll(sel));
+  return els.filter(function (e) { return (e.textContent || '').trim().indexOf(text) !== -1; })[0] || null;
+}
+function load(route, done) {
+  var fired = false;
+  var go = function () {
+    if (fired) return;
+    fired = true;
+    clearInterval(iv);
+    setTimeout(done, 500);
+  };
+  var iv = setInterval(function () {
+    try {
+      var loc = f.contentWindow.location;
+      var d = f.contentDocument;
+      var want = route === '/' ? '/' : route;
+      if (d && d.readyState === 'complete' && loc.pathname === want) go();
+    } catch (e) { clearInterval(iv); go(); }
+  }, 100);
+  f.onload = go;
+  f.src = route;
+}
+function setNativeValue(el, value) {
+  var proto = el instanceof win().HTMLTextAreaElement ? win().HTMLTextAreaElement.prototype : win().HTMLInputElement.prototype;
+  var setter = Object.getOwnPropertyDescriptor(proto, 'value').set;
+  setter.call(el, value);
+  el.dispatchEvent(new win().Event('input', { bubbles: true }));
+}
+function submit() {
+  var form = doc().querySelector('form');
+  form.dispatchEvent(new win().Event('submit', { bubbles: true, cancelable: true }));
+}
+
+var steps = [
+  // 1. Конфигуратор: выбираем марку и модель
+  function (next) {
+    load('/configure', function () {
+      var brand = byText('.picker__brand', 'BMW');
+      if (!brand) { note('brand-not-found'); return next(); }
+      brand.click();
+      setTimeout(function () {
+        var model = doc().querySelector('.picker__model');
+        if (!model) { note('model-not-found'); return next(); }
+        model.click();
+        setTimeout(function () {
+          var status = doc().querySelector('.picker__status');
+          note('vehicle-selected', { status: status ? status.textContent.trim() : null });
+          next();
+        }, 400);
+      }, 400);
+    });
+  },
+  // 2. Добавляем услугу в корзину
+  function (next) {
+    var add = doc().querySelector('.service-card button.chip-btn');
+    if (!add) { note('add-button-not-found'); return next(); }
+    add.click();
+    setTimeout(function () {
+      var badge = doc().querySelector('.icon-btn__badge');
+      note('added-to-cart', { badge: badge ? badge.textContent.trim() : null, inCart: !!byText('.service-card button.chip-btn', 'В корзине') });
+      next();
+    }, 400);
+  },
+  // 3. Открываем корзину — услуга и марка должны быть перенесены
+  function (next) {
+    load('/cart', function () {
+      var lines = doc().querySelectorAll('.cart-lines .line-item');
+      var pill = byText('.pill', 'Автомобиль');
+      note('cart-page', { lineItems: lines.length, vehicle: pill ? pill.textContent.trim() : null });
+      next();
+    });
+  },
+  // 4. Перезагрузка страницы — выбор должен сохраниться (localStorage)
+  function (next) {
+    load('/cart', function () {
+      var lines = doc().querySelectorAll('.cart-lines .line-item');
+      note('after-reload', { lineItems: lines.length, persisted: lines.length > 0 });
+      next();
+    });
+  },
+  // 5. Неверный телефон — должна появиться ошибка
+  function (next) {
+    var phone = doc().getElementById('lead-phone');
+    if (!phone) { note('phone-input-not-found'); return next(); }
+    setNativeValue(phone, '123');
+    submit();
+    setTimeout(function () {
+      var err = doc().querySelector('.field__error');
+      var invalid = doc().querySelector('.field__control.is-invalid');
+      note('invalid-phone', { errorShown: !!err, errorText: err ? err.textContent.trim() : null, invalidClass: !!invalid });
+      next();
+    }, 400);
+  },
+  // 6. Верный телефон — демо-заявка
+  function (next) {
+    var phone = doc().getElementById('lead-phone');
+    setNativeValue(phone, '+7 999 123-45-67');
+    submit();
+    setTimeout(function () {
+      var notice = doc().querySelector('.notice--info');
+      var ok = doc().querySelector('.notice--success');
+      var txt = notice ? notice.textContent.replace(/\s+/g, ' ').trim() : '';
+      note('valid-phone', { demoNotice: !!notice, successNotice: !!ok, mentionsNotSent: /не отправлена/i.test(txt), text: txt.slice(0, 160) });
+      next();
+    }, 1200);
+  },
+  // 7. Удаление услуги из корзины
+  function (next) {
+    var rm = byText('.line-item__remove', 'Удалить');
+    if (!rm) { note('remove-not-found'); return next(); }
+    rm.click();
+    setTimeout(function () {
+      var lines = doc().querySelectorAll('.cart-lines .line-item');
+      var empty = doc().querySelector('.cart-empty');
+      note('removed', { lineItems: lines.length, emptyState: !!empty });
+      next();
+    }, 500);
+  }
+];
+
+var i = 0;
+function run() {
+  if (i >= steps.length) {
+    document.getElementById('out').textContent = 'RESULT ' + JSON.stringify({ log: log, errors: errors });
+    return;
+  }
+  var s = steps[i++];
+  s(run);
+}
+run();
+</script>
+</body>
+</html>
