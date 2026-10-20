@@ -187,6 +187,8 @@ async function upload(item) {
           if (done % 10 === 0) console.log(`  загружено ${done}/${plan.length}`)
           return
         } catch (e2) {
+          // 404 — файла ещё нет (первый PUT не прошёл) → пробуем обычный PUT
+          if (String(e2.message).includes('404')) { await sleep(500 * attempt); continue }
           // 409 (sha race) — пробуем ещё раз
           if (String(e2.message).includes('409')) { await sleep(700 * attempt); continue }
           failed++
