@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/fonts/fonts.css" />
+<link rel="stylesheet" href="__CSS__" />
+<style>body{margin:0}</style>
+</head>
+<body>
+<!-- Точная копия структуры hero-секции главной страницы для замеров вёрстки -->
+<section class="page-hero">
+  <div class="page-hero__bg" style="background-image:url(/images/studio/hero.jpg)"></div>
+  <div class="container">
+    <div class="page-hero__grid">
+      <div>
+        <p class="eyebrow">DETAILING STUDIO</p>
+        <p class="home-hero__wordmark display">CHARGE</p>
+        <h1 class="display home-hero__title">Совершенство<br />&#8212; в <span class="accent--wine">деталях</span></h1>
+      </div>
+      <div class="page-hero__wheel"><span class="wheel wheel--chrome wheel--lg"><span class="wheel__rotor"></span></span></div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <span id="probeU" style="font-family:Unbounded;font-weight:700;font-size:100px">СОВЕРШЕНСТВО</span>
+  <span id="probeD" style="font-family:Unbounded;font-weight:700;font-size:100px">ДЕЙТЕЙЛИНГА</span>
+  <span id="probeL" style="font-family:Unbounded;font-weight:700;font-size:100px">LAMBORGHINI</span>
+  <span id="probeR" style="font-family:Unbounded;font-weight:700;font-size:100px">ROLLS-ROYCE</span>
+</div>
+<pre id="out"></pre>
+<script>
+document.fonts.ready.then(function () {
+  setTimeout(function () {
+    var w = function (id) { return Math.round(document.getElementById(id).getBoundingClientRect().width); };
+    var h1 = document.querySelector('h1');
+    var range = document.createRange();
+    range.selectNodeContents(h1);
+    var rects = Array.prototype.map.call(range.getClientRects(), function (r) { return Math.round(r.width); });
+    var res = {
+      fontFaces: document.fonts.size,
+      h1FontSize: getComputedStyle(h1).fontSize,
+      h1ColWidth: Math.round(h1.parentElement.getBoundingClientRect().width),
+      h1LineWidths: rects,
+      h1Lines: rects.length,
+      emSov: +(w('probeU') / 100).toFixed(3),
+      emDeit: +(w('probeD') / 100).toFixed(3),
+      emLamb: +(w('probeL') / 100).toFixed(3),
+      emRolls: +(w('probeR') / 100).toFixed(3)
+    };
+    document.getElementById('out').textContent = 'MEASURE ' + JSON.stringify(res);
+  }, 1200);
+});
+</script>
+</body>
+</html>
